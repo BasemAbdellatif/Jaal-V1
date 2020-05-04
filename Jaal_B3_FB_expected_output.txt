@@ -1,0 +1,41 @@
+centralController...
+monitors loads = [('s37-eth1', 442), ('s38-eth1', 441), ('s39-eth1', 441), ('s40-eth1', 441)]
+End of Controller
+
+Iteration 0 ...
+start = 0, end = 1999
+interface => s37-eth1
+Serialize_B...
+Deserialize_B_2...
+interface => s38-eth1
+Serialize_B...
+Deserialize_B_2...
+interface => s39-eth1
+Serialize_B...
+Deserialize_B_2...
+interface => s40-eth1
+Serialize_B...
+Deserialize_B_2...
+Avg_summary_sizes = [[ 679.2]
+ [ 744.8]
+ [1032.8]
+ [ 701.6]]
+full_summary_sizes = [[4590.4]
+ [3778.4]
+ [3558.4]
+ [3421.6]]
+Avg_summary_sizes[0] / full_summary_sizes[0] = [0.14796096]
+Avg_percent = [0.03699024]
+Avg_summary_sizes[1] / full_summary_sizes[1] = [0.19712047]
+Avg_percent = [0.08627036]
+Avg_summary_sizes[2] / full_summary_sizes[2] = [0.29024281]
+Avg_percent = [0.15883106]
+Avg_summary_sizes[3] / full_summary_sizes[3] = [0.20505027]
+Avg_percent = [0.21009363]
+Avg_percent = [0.20577504]
+inference...
+Sum = 1968 
+attack_pkts = 243
+confidence = 1, flase_alarm = 0.215
+rannge = 196
+Iteration 1 ...
