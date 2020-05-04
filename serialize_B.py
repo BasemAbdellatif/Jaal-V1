@@ -5,6 +5,7 @@ import struct
 from scipy.linalg import svd
 from sklearn.cluster import KMeans
 import csv
+## creating summary
 class Serialize_B:
 
     # total number of packet dimensions
