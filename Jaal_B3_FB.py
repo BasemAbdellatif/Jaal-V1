@@ -30,8 +30,8 @@ import Inference_B2
 
 def my_main():
 
-    path_to_pcap = "/Users/basemabdellatif/Desktop/spyder/compined_10000_10.pcap"       ## file contains the simulation packets
-    path_to_config = '/Users/basemabdellatif/Desktop/spyder/config.txt'                 ## file contains the monitors interfaces that should monitor the traffic
+    path_to_pcap = "combined_10000_10.pcap"       ## file contains the simulation packets
+    path_to_config = 'config.txt'                 ## file contains the monitors interfaces that should monitor the traffic
     buffer_size = 10000              ## total number of simulated packets (attack + normal)
     Header_fields = 18              ## length of header fields 
     SYN_index = 3                   ## index of SYN field

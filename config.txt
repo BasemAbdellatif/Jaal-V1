@@ -1,0 +1,4 @@
+s1-eth0 iface_1
+s2-eth0 iface_2
+s3-eth0 iface_3
+s4-eth0 iface_4
