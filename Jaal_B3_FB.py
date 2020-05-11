@@ -60,7 +60,7 @@ def my_main():
     c = central_controller_B.centralController(path_to_pcap, buffer_size, path_to_config)
     print("monitors loads = {}".format(c.monitors_workload))
     dict_1 = c.flows_assignment
-    ## writing the flows assignments in a .csv file, this file is shared and used by each monitor to check whether the current flow is assigned to itself or not.
+    ## writing the flows assignments in a .csv file, this file is shared and used by each monitor to check whether the current flow is assigned to him or not.
     w = csv.writer(open("flows_assignment.csv", "w"))  
     w.writerow(["key","val"])
     for key, val in dict_1.items():
@@ -68,7 +68,7 @@ def my_main():
     print("End of Controller\n")
 
 
-    ## variables used to calculate the average overhead/average saved.
+    ## variables used to calculate the saved average overhead .
     number_of_interfaces = len(c.interfaces)
     Avg_summary_sizes = np.zeros((number_of_interfaces,1))
     full_summary_sizes = np.zeros((number_of_interfaces,1))
@@ -102,7 +102,7 @@ def my_main():
 
             print("interface => {}".format(interface))
             ## each monitor calls serialize_B to do the following functions:
-            ##      * create the original pkts matrix 
+            ##      * create the original packets matrix 
             ##      * perform SVD and K_means
 
             s = serialize_B.Serialize_B(path_to_pcap, buffer_size_1, rank, startt, endd,'flows_assignment.csv',interface)
@@ -167,7 +167,8 @@ def my_main():
 
 
         rannge = 0
-        ## the inference class performs  reads and combines the summaries
+        ## the inference class reads and combines the summaries
+        ## then check the elements in the combined summary against the question vector 
         infe = Inference_B2.inference(summary_list)
 
         for key, val in infe.compined_summaries.items():
@@ -180,7 +181,7 @@ def my_main():
             key3 = key2.split()
             for elem in key3:
                 key1.append(float(elem))
-
+            ## getting the distance between the summary element and the question vector
             diff1 = infe.jaal_diff(query_vector,key1)
             jaal_diff_list.append(diff1)
 
@@ -214,7 +215,8 @@ def my_main():
 
             values.append(int(val))
         
-
+        ## this part is not the correct way for calculating the True Positive Rate and False Positive Rate for actual scenarios,
+        ##  we assume that it is correct here because we tailored the attack scenario and we know the number of attack packets at each iteration before hand  
         if attack_pkts < total_attack_pkts:
             confidence  = attack_pkts / (1.0 * total_attack_pkts)
             false_alarm = 0
