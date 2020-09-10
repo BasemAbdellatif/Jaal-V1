@@ -1,5 +1,5 @@
 # Jaal-V1
-This code is for the first version of Jaal 
+This code is for the first version of Jaal "https://www.cs.ucr.edu/~epapalex/papers/conext17-jaal.pdf"
 
 The main function is in jaal_B3_FB.py file
 
